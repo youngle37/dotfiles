@@ -1,0 +1,77 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Operation can work with system clipboard
+set clipboard=unnamed
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Raimondi/delimitMate'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+Plugin 'terryma/vim-multiple-cursors'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+syntax on
+
+set number
+set ruler
+
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+
+set incsearch
+set hlsearch
+
+set autoindent
+set cindent
+
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+
+set relativenumber
+
+set wrap
+
+set backspace=indent,eol,start
+
+" apply ~/.vim/cpp.vim setting.
+autocmd FileType cpp source ~/.vim/cpp.vim
+" apply ~/.vim/c.vim setting.
+autocmd FileType c source ~/.vim/c.vim
+" apply ~/.vim/py.vim setting.
+autocmd FileType python source ~/.vim/py.vim
+
+" delimitMate indent setting.
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+
+" NERDcommenter setting.
+let mapleader=","
+set timeout timeoutlen=1500
+
+" set mouse-select and mouse-scroll.
+set mouse=a
