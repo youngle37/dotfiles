@@ -10,10 +10,9 @@ vim:
 	@rm -rf ~/.vim ~/.vimrc
 	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	@cp -a $(DIR)/vim/vim/. ~/.vim/
-	@ln -sf $(DIR)/vim/vimrc ~/.vimrc
-	@cat $(DIR)/vim/vundle >> $(DIR)/vim/vimrc
+	@cat $(DIR)/vim/vundle >> ~/.vimrc
 	@vim +PluginInstall +qall
-	@cat $(DIR)/vim/default >> $(DIR)/vim/vimrc
+	@cat $(DIR)/vim/default >> ~/.vimrc
 
 all: vim
 	@echo 'Setting finished.'
