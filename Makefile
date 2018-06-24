@@ -9,6 +9,7 @@ vim:
 	@echo 'Setting up vim...'
 	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	@ln -sf $(DIR)/vim/vimrc ~/.vimrc
+	@cp -a $(DIR)/vim/vim/ ~/.vim/
 	@vim +PluginInstall +qall
 
 all: vim
