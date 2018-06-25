@@ -1,6 +1,7 @@
+OHMYZSH = ~/.oh-my-zsh
 DIR = $(shell pwd)
 
-.PHONY: default vim all
+.PHONY: default vim zsh all
 
 default:
 	@echo 'Missing one argument.'
@@ -8,11 +9,12 @@ default:
 vim:
 	@echo 'Setting up vim...'
 	@rm -rf ~/.vim ~/.vimrc
-	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	@cp -a $(DIR)/vim/vim/. ~/.vim/
-	@cat $(DIR)/vim/vimrc/vundle.vim >> ~/.vimrc
-	@vim +PluginInstall +qall
-	@cat $(DIR)/vim/vimrc/vimrc.vim >> ~/.vimrc
+	@sh $(DIR)/vim/install.sh $(DIR)
 
-all: vim
+zsh:
+	@echo 'Setting up zsh...'
+	@sh $(DIR)/zsh/install.sh $(DIR) $(OHMYZSH) || echo 'Skip installing Oh My Zsh'
+	@cp -a $(DIR)/zsh/zshrc ~/.zshrc
+
+all: vim zsh
 	@echo 'Setting finished.'
