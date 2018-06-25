@@ -12,7 +12,7 @@ vim:
 	@cp -a $(DIR)/vim/vim/. ~/.vim/
 	@cat $(DIR)/vim/vimrc/vundle.vim >> ~/.vimrc
 	@vim +PluginInstall +qall
-	@cat $(DIR)/vim/vimrc/default.vim >> ~/.vimrc
+	@cat $(DIR)/vim/vimrc/vimrc.vim >> ~/.vimrc
 
 all: vim
 	@echo 'Setting finished.'
