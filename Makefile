@@ -14,7 +14,7 @@ vim:
 
 zsh:
 	@echo 'Setting up zsh...'
-	@sh $(DIR)/zsh/install.sh $(DIR) $(OHMYZSH) || echo 'Skip installing Oh My Zsh'
+	@sh $(DIR)/zsh/install.sh $(DIR) $(OHMYZSH)
 	@cp -a $(DIR)/zsh/zshrc ~/.zshrc
 	@echo 'Zsh finished.'
 
