@@ -1,6 +1,24 @@
+#!/usr/bin/env sh
+
 DIR=$1
 OHMYZSH=$2
 
+# zsh
+if ! hash zsh >/dev/null 2>&1; then
+    echo 'Installing zsh.'
+    if hash brew >/dev/null 2>&1; then
+        brew install zsh
+    elif hash apt-get >/dev/null 2>&1; then
+        apt-get install zsh
+    else
+        echo 'Unknown package manager.'
+        exit 1
+    fi
+else
+    echo 'Skip installing zsh.'
+fi
+
+# oh-my-zsh
 if [ ! -d $OHMYZSH ]; then
     echo 'Installing oh-my-zsh.'
     git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $OHMYZSH
@@ -32,3 +50,5 @@ else
     echo 'Skip installing zsh-completions.'
 fi
 
+# change default shell
+sh $DIR/zsh/chsh.sh
