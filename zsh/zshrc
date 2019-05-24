@@ -19,4 +19,5 @@ export TERM=xterm-256color # For tmux auto-suggestions highlight problems
 export GOPATH=$(go env GOPATH)
 
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
-alias ipy="ipython"
+alias pip="pip3"
+alias ipy="ipython3"
