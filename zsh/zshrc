@@ -18,6 +18,9 @@ export TERM=xterm-256color # For tmux auto-suggestions highlight problems
 # Golang
 export GOPATH=$(go env GOPATH)
 
+# Default Editor
+export EDITOR=vim
+
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 alias pip="pip3"
 alias ipy="ipython3"

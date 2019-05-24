@@ -9,7 +9,7 @@ if ! hash zsh >/dev/null 2>&1; then
     if hash brew >/dev/null 2>&1; then
         brew install zsh
     elif hash apt-get >/dev/null 2>&1; then
-        apt-get install zsh
+        apt-get install -y zsh
     else
         echo 'Unknown package manager.'
         exit 1
