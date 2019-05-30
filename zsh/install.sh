@@ -6,6 +6,12 @@ OHMYZSH=$2
 # zsh
 if ! hash zsh >/dev/null 2>&1; then
     echo 'Installing zsh.'
+
+    if [ "$EUID" -ne 0 ]; then
+        echo 'Need to run as root to install zsh. Try sudo.'
+        exit 1
+    fi
+
     if hash brew >/dev/null 2>&1; then
         brew install zsh
     elif hash apt-get >/dev/null 2>&1; then
