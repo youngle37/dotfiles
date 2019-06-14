@@ -40,3 +40,6 @@ set timeout timeoutlen=1500
 
 " set mouse-select and mouse-scroll.
 set mouse=a
+
+set modelines=0
+set nomodeline
