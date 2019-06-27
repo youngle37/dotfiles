@@ -29,6 +29,8 @@ autocmd FileType cpp source ~/.vim/cpp.vim
 autocmd FileType c source ~/.vim/c.vim
 " apply ~/.vim/py.vim setting.
 autocmd FileType python source ~/.vim/py.vim
+" apply ~/.vim/go.vim setting.
+autocmd FileType go source ~/.vim/go.vim
 
 " delimitMate indent setting.
 let delimitMate_expand_cr = 1
