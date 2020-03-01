@@ -25,4 +25,5 @@ export EDITOR=vim
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 alias ipy="ipython3"
 alias youtube-mp3="youtube-dl -x --audio-format mp3"
+alias youtube-flac="youtube-dl -x --audio-format flac"
 alias tmp="cd /tmp"
