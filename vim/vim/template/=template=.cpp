@@ -1,16 +1,16 @@
 #include <iostream>
 #include <vector>
+#include <map>
+#include <set>
+#include <queue>
 #include <utility>
+#include <string>
+#include <sstream>
 #include <algorithm>
-
-#define x first
-#define y second
 
 using namespace std;
 
 int main(){
-    ios::sync_with_stdio(false);
-
     %HERE%
 
     return 0;
