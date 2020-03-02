@@ -7,6 +7,9 @@ set t_Co=256
 set cursorline
 colorscheme onehalfdark
 
+" Operation can work with system clipboard
+set clipboard=unnamed
+
 set incsearch
 set hlsearch
 
