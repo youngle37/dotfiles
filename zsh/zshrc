@@ -19,8 +19,16 @@ export TERM=xterm-256color
 export GOPATH=$(go env GOPATH)
 export PATH=$GOPATH/bin:$PATH
 
-# Flutter
-export PATH=$PATH:/Users/youngle/flutter/bin
+case `uname` in
+  Darwin)
+    # Flutter
+    export PATH=$PATH:/Users/youngle/flutter/bin
+  ;;
+  Linux)
+  ;;
+  FreeBSD)
+  ;;
+esac
 
 # Default Editor
 export EDITOR=vim
