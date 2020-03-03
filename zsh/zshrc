@@ -1,28 +1,37 @@
+# Oh-My-Zsh
 ZSH_THEME="avit"
-
 plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-completions
 )
-
-export PATH=~/.composer/vendor/bin:/usr/local/opt/binutils/bin:/usr/local/go/bin:/usr/local/sbin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-export LANG=en_US.UTF-8
-
-# For tmux auto-suggestions highlight problems
-export TERM=xterm-256color
-
-# Golang
-export GOPATH=$(go env GOPATH)
-export PATH=$GOPATH/bin:$PATH
+# END Oh-My-Zsh
 
 case `uname` in
   Darwin)
     # Flutter
-    export PATH=$PATH:/Users/youngle/flutter/bin
+    export PATH=$PATH:/Users/$USER/flutter/bin
+    # END Flutter
+
+    # composer
+    export PATH=~/.composer/vendor/bin:$PATH
+    # END composer
+
+    # Binutils
+    export PATH=/usr/local/opt/binutils/bin:$PATH
+    # END Binutils
+
+    # Go
+    export PATH=/usr/local/go/bin:$PATH
+    export GOPATH=$(go env GOPATH)
+    export PATH=$GOPATH/bin:$PATH
+    # END Go
+
+    # superuser
+    export PATH=/usr/local/sbin:$PATH
+    # END superuser
   ;;
   Linux)
   ;;
@@ -32,6 +41,11 @@ esac
 
 # Default Editor
 export EDITOR=vim
+# locale
+export LANG=en_US.UTF-8
+# For tmux auto-suggestions highlight problems
+export TERM=xterm-256color
+
 
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 alias ipy="ipython3"
