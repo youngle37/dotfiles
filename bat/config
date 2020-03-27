@@ -1,0 +1,6 @@
+# Set the theme to "OneHalfDark"
+--theme="OneHalfDark"
+
+# Show line number and git changes
+--style=numbers,changes
+

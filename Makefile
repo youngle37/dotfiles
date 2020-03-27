@@ -1,10 +1,10 @@
-GIT_NAME = YoungLe
-GIT_EMAIL = contact@youngle.work
+GIT_NAME = "YoungLe"
+GIT_EMAIL = "contact@youngle.work"
 
 OHMYZSH = ~/.oh-my-zsh
 DIR = $(shell pwd)
 
-.PHONY: default git vim zsh all
+.PHONY: default git vim zsh bat all
 
 default:
 	@echo 'Missing one argument.'
@@ -15,6 +15,9 @@ git:
 	@echo 'Are you sure to set git? [y/N]' && read ans && [ $${ans:-N} = y ]
 	@echo 'Setting up git...'
 	git config --global core.editor "vim"
+	git config --global alias.st status
+	git config --global alias.co checkout
+	git config --global alias.br branch
 	git config --global --replace-all user.name $(GIT_NAME)
 	git config --global --replace-all user.email $(GIT_EMAIL)
 
@@ -32,5 +35,10 @@ zsh:
 	@cp -a $(DIR)/zsh/zshrc ~/.zshrc
 	@echo 'Zsh finished.'
 
-all: git vim zsh
+bat:
+	@echo 'Setting up bat...'
+	@sh $(DIR)/bat/install.sh $(DIR)
+	@echo 'Bat finished.'
+
+all: git vim zsh bat
 	@echo 'All setting finished.'
