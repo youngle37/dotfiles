@@ -4,7 +4,7 @@ GIT_EMAIL = "contact@youngle.work"
 OHMYZSH = ~/.oh-my-zsh
 DIR = $(shell pwd)
 
-.PHONY: default git vim zsh bat all
+.PHONY: default git vim zsh bat fzf all
 
 default:
 	@echo 'Missing one argument.'
@@ -40,5 +40,11 @@ bat:
 	@sh $(DIR)/bat/install.sh $(DIR)
 	@echo 'Bat finished.'
 
-all: git vim zsh bat
+fzf:
+	@echo 'Setting up fzf...'
+	@git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	@yes | ~/.fzf/install
+	@echo 'Fzf finished.'
+
+all: git vim zsh bat fzf
 	@echo 'All setting finished.'
